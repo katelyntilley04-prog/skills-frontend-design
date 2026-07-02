@@ -251,6 +251,35 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
 }
 .hero-inner { position: relative; z-index: 1; display: grid; gap: clamp(2rem, 5vw, 3rem); }
 .hero-copy { max-width: 44rem; }
+
+.hero-figures {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  height: 92%;
+  width: auto;
+  max-width: 46%;
+  opacity: 0.95;
+  pointer-events: none;
+}
+@media (max-width: 900px) {
+  .hero-figures {
+    max-width: 100%;
+    width: 150%;
+    right: -25%;
+    height: 60%;
+    opacity: 0.3;
+  }
+}
+@media (max-width: 600px) {
+  .hero-figures {
+    width: 118%;
+    right: -9%;
+    height: 46%;
+    opacity: 0.32;
+  }
+}
 .hero h1 { font-size: var(--step-6); line-height: 0.92; margin-top: 1rem; }
 .hero h1 em { font-style: normal; color: var(--rust); -webkit-text-stroke: 1.5px var(--brass); }
 .hero-sub { margin-top: 1.5rem; font-size: var(--step-3); color: var(--chalk-dim); max-width: 38rem; }
@@ -495,6 +524,83 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
 
   <!-- HERO -->
   <section id="top" class="hero">
+    <svg class="hero-figures" viewBox="0 0 640 440" preserveAspectRatio="xMaxYMax meet" aria-hidden="true">
+      <defs>
+        <filter id="rimglow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="5" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <g filter="url(#rimglow)" fill="#2b2822" stroke="#d8a31a" stroke-width="2.5" stroke-linejoin="round">
+        <!-- left operative -->
+        <g transform="translate(120,44)">
+          <rect x="-40" y="178" width="34" height="150" rx="10"/>
+          <rect x="6" y="178" width="34" height="150" rx="10"/>
+          <rect x="-42" y="322" width="38" height="24" rx="6"/>
+          <rect x="4" y="322" width="38" height="24" rx="6"/>
+          <rect x="-46" y="54" width="92" height="130" rx="20"/>
+          <ellipse cx="0" cy="64" rx="54" ry="24"/>
+          <g transform="rotate(-30 -50 78)">
+            <rect x="-64" y="70" width="26" height="92" rx="12"/>
+          </g>
+          <g transform="rotate(18 50 78)">
+            <rect x="38" y="70" width="26" height="92" rx="12"/>
+          </g>
+          <g transform="translate(-96,150) rotate(-42)">
+            <rect x="-8" y="-11" width="32" height="22" rx="5"/>
+            <rect x="20" y="-6" width="42" height="10" rx="3"/>
+            <polygon points="-8,11 6,11 -1,24"/>
+          </g>
+          <circle cx="0" cy="26" r="24"/>
+        </g>
+
+        <!-- middle operative -->
+        <g transform="translate(322,20) scale(1.08)">
+          <rect x="-40" y="178" width="34" height="150" rx="10"/>
+          <rect x="6" y="178" width="34" height="150" rx="10"/>
+          <rect x="-42" y="322" width="38" height="24" rx="6"/>
+          <rect x="4" y="322" width="38" height="24" rx="6"/>
+          <rect x="-46" y="54" width="92" height="130" rx="20"/>
+          <ellipse cx="0" cy="64" rx="54" ry="24"/>
+          <g transform="rotate(10 -50 78)">
+            <rect x="-64" y="70" width="26" height="92" rx="12"/>
+          </g>
+          <g transform="rotate(-118 50 78)">
+            <rect x="38" y="70" width="26" height="92" rx="12"/>
+          </g>
+          <g transform="translate(74,-6) rotate(6)">
+            <rect x="-10" y="-24" width="20" height="46" rx="6"/>
+            <rect x="-4" y="-40" width="8" height="20" rx="3"/>
+          </g>
+          <circle cx="0" cy="26" r="24"/>
+        </g>
+
+        <!-- right operative -->
+        <g transform="translate(524,44) scale(-1,1)">
+          <rect x="-40" y="178" width="34" height="150" rx="10"/>
+          <rect x="6" y="178" width="34" height="150" rx="10"/>
+          <rect x="-42" y="322" width="38" height="24" rx="6"/>
+          <rect x="4" y="322" width="38" height="24" rx="6"/>
+          <rect x="-46" y="54" width="92" height="130" rx="20"/>
+          <ellipse cx="0" cy="64" rx="54" ry="24"/>
+          <g transform="rotate(-30 -50 78)">
+            <rect x="-64" y="70" width="26" height="92" rx="12"/>
+          </g>
+          <g transform="rotate(18 50 78)">
+            <rect x="38" y="70" width="26" height="92" rx="12"/>
+          </g>
+          <g transform="translate(-96,150) rotate(-42)">
+            <rect x="-8" y="-11" width="32" height="22" rx="5"/>
+            <rect x="20" y="-6" width="42" height="10" rx="3"/>
+            <polygon points="-8,11 6,11 -1,24"/>
+          </g>
+          <circle cx="0" cy="26" r="24"/>
+        </g>
+      </g>
+    </svg>
     <div class="container hero-inner">
       <div class="hero-copy">
         <span class="eyebrow">3 guys. 1 dog. Zero mercy for pests.</span>
