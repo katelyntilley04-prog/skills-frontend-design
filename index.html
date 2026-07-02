@@ -853,7 +853,9 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
         </dl>
       </div>
 
-      <form class="form" aria-label="Free inspection request">
+      <form class="form" aria-label="Free inspection request" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="text" name="_gotcha" style="position:absolute; left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_subject" value="New free inspection request — RR&amp;R Pest Control">
         <div class="form-row">
           <div class="field">
             <label for="name">Full name</label>
@@ -863,6 +865,10 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
             <label for="phone">Phone</label>
             <input id="phone" name="phone" type="tel" autocomplete="tel" required>
           </div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
         </div>
         <div class="field">
           <label for="address">Property address</label>
