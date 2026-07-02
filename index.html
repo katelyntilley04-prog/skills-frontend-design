@@ -343,10 +343,8 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
 .crew-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
 .crew-portrait { aspect-ratio: 4 / 3; display: flex; align-items: flex-end; padding: 1.25rem; position: relative; background: linear-gradient(160deg, #35301f, #1c1a15 70%); }
 .crew-portrait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55)); }
-.crew-portrait .initials { position: relative; z-index: 1; font-family: var(--font-display); font-size: var(--step-5); color: rgba(237, 230, 214, 0.9); line-height: 1; }
 .crew-body { padding: 1.5rem 1.5rem 1.75rem; flex: 1; display: flex; flex-direction: column; }
 .crew-name { font-size: var(--step-3); color: var(--chalk); }
-.crew-nick { font-family: var(--font-stencil); color: var(--rust); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.35rem; display: block; }
 .crew-role { margin-top: 0.75rem; font-size: var(--step-1); color: var(--brass); letter-spacing: 0.04em; text-transform: uppercase; font-family: var(--font-stencil); }
 .crew-bio { margin-top: 0.85rem; color: var(--chalk-dim); font-size: var(--step-1); flex: 1; }
 .crew-prs { margin-top: 1.25rem; display: flex; gap: 1rem; border-top: 1px solid var(--line); padding-top: 1rem; }
@@ -360,7 +358,15 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
 @media (max-width: 820px) { .tank-inner { grid-template-columns: 1fr; } }
 .tank-copy p { color: var(--chalk-dim); font-size: var(--step-3); margin-top: 1.25rem; max-width: 34rem; }
 .tank-card { background: var(--ink); border: 1px solid var(--line); border-radius: var(--radius); padding: 2rem; }
-.tank-card .tank-icon { width: 100%; max-width: 200px; margin-inline: auto; color: var(--brass); }
+.tank-card .tank-photo {
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, #35301f, #1c1a15 70%);
+  border: 1px solid var(--line);
+}
 .tank-stats { margin-top: 1.75rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 .tank-stats dt { font-family: var(--font-stencil); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--chalk-dim); }
 .tank-stats dd { margin: 0.35rem 0 0; font-family: var(--font-display); font-size: var(--step-3); color: var(--chalk); }
@@ -464,7 +470,7 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#crew">The Crew</a></li>
-        <li><a href="#tank">Tank</a></li>
+        <li><a href="#splash">Splash</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#reviews">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -480,13 +486,13 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
     <span>Licensed &amp; insured</span>
     <span>Family owned, three brothers-in-arms</span>
     <span>Serving DC · Maryland · Virginia</span>
-    <span>Tank-approved</span>
+    <span>Splash-approved</span>
     <span>No contracts, no games</span>
     <span>500+ five-star reviews</span>
     <span>Licensed &amp; insured</span>
     <span>Family owned, three brothers-in-arms</span>
     <span>Serving DC · Maryland · Virginia</span>
-    <span>Tank-approved</span>
+    <span>Splash-approved</span>
     <span>No contracts, no games</span>
   </div>
 </div>
@@ -507,7 +513,7 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
         <div class="hero-meta">
           <div><strong>14 yrs</strong><span>Combined field experience</span></div>
           <div><strong>3,400+</strong><span>Properties protected</span></div>
-          <div><strong>1,000+</strong><span>Rats sniffed out by Tank</span></div>
+          <div><strong>1,000+</strong><span>Rats sniffed out by Splash</span></div>
         </div>
       </div>
     </div>
@@ -535,7 +541,7 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
           </div>
           <div class="plate">
             <div class="plate-disc"><span>1K+</span></div>
-            <div class="plate-label"><strong>1,000+</strong><span>Rats sniffed out by Tank</span></div>
+            <div class="plate-label"><strong>1,000+</strong><span>Rats sniffed out by Splash</span></div>
           </div>
           <div class="plate">
             <div class="plate-disc"><span>100%</span></div>
@@ -628,7 +634,7 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
             <path d="M13 15c3 0 6 2 6 2"/>
           </svg>
           <h3>Rodents</h3>
-          <p>Exclusion-first trapping — Tank finds the entry points, we make sure they stay closed.</p>
+          <p>Exclusion-first trapping — Splash finds the entry points, we make sure they stay closed.</p>
         </article>
 
         <article class="service-card">
@@ -671,10 +677,9 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
 
       <div class="crew-grid">
         <article class="crew-card">
-          <div class="crew-portrait"><span class="initials" aria-hidden="true">RIC</span></div>
+          <div class="crew-portrait"></div>
           <div class="crew-body">
             <h3 class="crew-name">Rick</h3>
-            <span class="crew-nick">"The Mammoth"</span>
             <span class="crew-role">Co-Founder — Termites &amp; Wildlife</span>
             <p class="crew-bio">Former competitive powerlifter and licensed wildlife trapper. If it's under your foundation or up in your attic, Rick has already found the entry point.</p>
             <div class="crew-prs">
@@ -686,10 +691,9 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
         </article>
 
         <article class="crew-card">
-          <div class="crew-portrait"><span class="initials" aria-hidden="true">RAM</span></div>
+          <div class="crew-portrait"></div>
           <div class="crew-body">
             <h3 class="crew-name">Rameek</h3>
-            <span class="crew-nick">"Iron"</span>
             <span class="crew-role">Co-Founder — Bed Bugs &amp; Cockroaches</span>
             <p class="crew-bio">Competitive bodybuilder with an entomology background. Rameek treats every heat treatment like a competition prep — precise, tracked, no shortcuts.</p>
             <div class="crew-prs">
@@ -701,10 +705,9 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
         </article>
 
         <article class="crew-card">
-          <div class="crew-portrait"><span class="initials" aria-hidden="true">RAS</span></div>
+          <div class="crew-portrait"></div>
           <div class="crew-body">
             <h3 class="crew-name">Rashaun</h3>
-            <span class="crew-nick">"The Anvil"</span>
             <span class="crew-role">Co-Founder — Bees, Wasps &amp; Rodents</span>
             <p class="crew-bio">Former strongman competitor and part-time beekeeper. Rashaun would rather relocate a hive than destroy one, and he's strong enough to carry the box himself.</p>
             <div class="crew-prs">
@@ -718,26 +721,17 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
     </div>
   </section>
 
-  <!-- TANK -->
-  <section id="tank" class="tank">
+  <!-- SPLASH -->
+  <section id="splash" class="tank">
     <div class="container tank-inner">
       <div class="tank-copy">
         <span class="eyebrow">The fourth teammate</span>
-        <h2 style="font-size:var(--step-5); margin-top:0.5rem;">Meet Tank, Chief Rodent Detection Officer</h2>
-        <p>Nine pounds of pure focus. Our mini doberman was bred to hunt vermin, and he takes the job more seriously than most people take theirs. If there's a rat within fifty feet, Tank already knew about it before we parked the truck.</p>
+        <h2 style="font-size:var(--step-5); margin-top:0.5rem;">Meet Splash, Chief Rodent Detection Officer</h2>
+        <p>Nine pounds of pure focus. Our mini doberman was bred to hunt vermin, and he takes the job more seriously than most people take theirs. If there's a rat within fifty feet, Splash already knew about it before we parked the truck.</p>
         <p>He doesn't do inspections without a squeaky toy on standby, and he has never once missed a shift.</p>
       </div>
       <div class="tank-card">
-        <svg class="tank-icon" viewBox="0 0 200 160" fill="none" aria-hidden="true">
-          <ellipse cx="100" cy="120" rx="55" ry="26" fill="#171613" stroke="#3a362d" stroke-width="2"/>
-          <path d="M70 95c-4-22 6-40 30-40s34 18 30 40" fill="#211f1a" stroke="#d8a31a" stroke-width="2.5"/>
-          <path d="M78 58 68 34l16 14z" fill="#211f1a" stroke="#d8a31a" stroke-width="2.5" stroke-linejoin="round"/>
-          <path d="M122 58 132 34l-16 14z" fill="#211f1a" stroke="#d8a31a" stroke-width="2.5" stroke-linejoin="round"/>
-          <circle cx="88" cy="72" r="3.2" fill="#ede6d6"/>
-          <circle cx="112" cy="72" r="3.2" fill="#ede6d6"/>
-          <ellipse cx="100" cy="86" rx="6" ry="4" fill="#c1440e"/>
-          <path d="M150 118c10-4 20 2 22 10" stroke="#3a362d" stroke-width="4" stroke-linecap="round" fill="none"/>
-        </svg>
+        <div class="tank-photo" role="img" aria-label="Splash, our mini doberman"></div>
         <dl class="tank-stats">
           <div><dt>Weight</dt><dd>9 lb</dd></div>
           <div><dt>Rank</dt><dd>Chief Detection Officer</dd></div>
@@ -920,7 +914,7 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
       <nav class="footer-links" aria-label="Footer">
         <a href="#services">Services</a>
         <a href="#crew">The Crew</a>
-        <a href="#tank">Tank</a>
+        <a href="#splash">Splash</a>
         <a href="#process">Process</a>
         <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
@@ -934,7 +928,7 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
           <circle cx="7" cy="9" r="2"/><circle cx="12" cy="7" r="2"/><circle cx="17" cy="9" r="2"/>
           <path d="M12 12c-3 0-5.5 2-5.5 4.5S9 20 12 20s5.5-1 5.5-3.5S15 12 12 12z"/>
         </svg>
-        Tank approved
+        Splash approved
       </span>
     </div>
   </div>
