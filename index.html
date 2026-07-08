@@ -153,7 +153,15 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
   position: relative;
 }
 .brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-.brand-mark { width: 42px; height: 42px; flex-shrink: 0; }
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: 50% 78%;
+  border-radius: 50%;
+  border: 2px solid var(--brass);
+}
 .brand-name { display: flex; flex-direction: column; line-height: 1; }
 .brand-name strong { font-family: var(--font-display); font-size: 1.15rem; letter-spacing: 0.03em; }
 .brand-name span { font-family: var(--font-stencil); font-size: 0.6rem; letter-spacing: 0.22em; color: var(--chalk-dim); margin-top: 0.25rem; }
@@ -244,10 +252,29 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
   position: relative;
   padding-block: clamp(3.5rem, 10vw, 8rem) clamp(3rem, 7vw, 6rem);
   overflow: hidden;
+  background: var(--ink);
+}
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  opacity: 0.4;
+  filter: saturate(0.8);
+  transform: scale(1.6);
+  transform-origin: center bottom;
+}
+.hero-photo-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   background:
-    radial-gradient(ellipse at 82% -10%, rgba(193, 68, 14, 0.28), transparent 55%),
-    radial-gradient(circle, rgba(237,230,214,0.05) 1px, transparent 1.4px) 0 0/22px 22px,
-    var(--ink);
+    linear-gradient(180deg, var(--ink) 0%, rgba(23,22,19,0.35) 20%, rgba(23,22,19,0.3) 60%, var(--ink) 100%),
+    radial-gradient(ellipse at 82% -10%, rgba(193, 68, 14, 0.3), transparent 55%),
+    radial-gradient(circle, rgba(237,230,214,0.05) 1px, transparent 1.4px) 0 0/22px 22px;
 }
 .hero-inner { position: relative; z-index: 1; display: grid; gap: clamp(2rem, 5vw, 3rem); }
 .hero-copy { max-width: 44rem; }
@@ -444,12 +471,7 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
 <header class="site-nav">
   <div class="nav-bar">
     <a class="brand" href="#top">
-      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-        <circle cx="24" cy="24" r="21" fill="#211f1a" stroke="#d8a31a" stroke-width="2"/>
-        <rect x="8" y="21" width="32" height="6" rx="1.5" fill="#c1440e"/>
-        <rect x="4" y="17" width="5" height="14" rx="1" fill="#ede6d6"/>
-        <rect x="39" y="17" width="5" height="14" rx="1" fill="#ede6d6"/>
-      </svg>
+      <img class="brand-mark" src="PEST.jpeg" alt="RR&amp;R Pest Control logo">
       <span class="brand-name">
         <strong>RR&amp;R Pest Control</strong>
         <span>RRRPestSolutions.com</span>
@@ -501,6 +523,8 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
 
   <!-- HERO -->
   <section id="top" class="hero">
+    <img class="hero-photo" src="PEST.jpeg" alt="" aria-hidden="true">
+    <div class="hero-photo-overlay" aria-hidden="true"></div>
     <div class="container hero-inner">
       <div class="hero-copy">
         <span class="eyebrow">3 guys. 1 dog. Zero mercy for pests.</span>
@@ -905,12 +929,7 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
   <div class="container">
     <div class="footer-inner">
       <a class="brand footer-brand" href="#top">
-        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-          <circle cx="24" cy="24" r="21" fill="#171613" stroke="#d8a31a" stroke-width="2"/>
-          <rect x="8" y="21" width="32" height="6" rx="1.5" fill="#c1440e"/>
-          <rect x="4" y="17" width="5" height="14" rx="1" fill="#ede6d6"/>
-          <rect x="39" y="17" width="5" height="14" rx="1" fill="#ede6d6"/>
-        </svg>
+        <img class="brand-mark" src="PEST.jpeg" alt="RR&amp;R Pest Control logo">
         <span class="brand-name">
           <strong>RR&amp;R Pest Control</strong>
           <span>RRRPestSolutions.com</span>
