@@ -385,6 +385,8 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
   border-radius: var(--radius);
   background: linear-gradient(160deg, #35301f, #1c1a15 70%);
   border: 1px solid var(--line);
+  object-fit: cover;
+  display: block;
 }
 .tank-stats { margin-top: 1.75rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 .tank-stats dt { font-family: var(--font-stencil); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--chalk-dim); }
@@ -752,7 +754,7 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
         <p>He doesn't do inspections without a squeaky toy on standby, and he has never once missed a shift.</p>
       </div>
       <div class="tank-card">
-        <div class="tank-photo" role="img" aria-label="Splash, our mini doberman"></div>
+        <img class="tank-photo" src="Splash.jpeg.jpg" alt="Splash, our mini doberman">
         <dl class="tank-stats">
           <div><dt>Weight</dt><dd>9 lb</dd></div>
           <div><dt>Rank</dt><dd>Chief Detection Officer</dd></div>
